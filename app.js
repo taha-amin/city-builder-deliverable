@@ -5,7 +5,7 @@ const castleDropDown = document.getElementById('castle-dropdown');
 const skylineDropDown = document.getElementById('skyline-dropdown');
 const waterfrontDropDown = document.getElementById('waterfront-dropdown');
 
-//const countMessageEl = document.getElementById('count-message');
+const countMessageEl = document.getElementById('count-message');
 
 const castleImageEl = document.getElementById('castle-img');
 const skylineImageEl = document.getElementById('skyline-img');
@@ -21,8 +21,46 @@ let waterfrontCount = 0;
 
 const slogans = [];
 
+//set event listeners
+addSloganButton.addEventListener('click', () => {
 
+});
 
+cityNameInput.addEventListener('input', () => {
+
+});
+
+castleDropDown.addEventListener('change', () => {
+
+});
+
+skylineDropDown.addEventListener('change', () => {
+
+});
+
+waterfrontDropDown.addEventListener('change', () => {
+
+});
+
+function displayCountStats() {
+  countMessageEl.textContent = `You changed the castle image ${castleCount} times, the skyline image ${skylineCount} times, and the waterfront image ${waterfrontCount} times.`;
+}
+
+function displaySlogans() {
+  const listEl = document.getElementById('list');
+
+  listEl.textContent = '';
+
+  for (let slogan of slogans) {
+    const pTag = document.createElement('p');
+
+    pTag.classList.add('slogan');
+    pTag.textContent = slogan;
+
+    //append this NEW element to an OLD element
+    listEl.append(pTag);
+  }
+}
 
 // set event listeners 
   // get user input
