@@ -91,25 +91,36 @@ footer {
 }
 
 .city-images img {
-    width: 200px;
-    height: 150px;
-    flex-direction: row;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.main-section {
+    height: 200px;
+    width: 250px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
 .user-inputs {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.user-inputs > div {
     height: 100%;
     border: solid 1px black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.slogan {
+    background: yellow;
+    margin: 5px;
+    width: 100;
+    text-align: center;
 }
