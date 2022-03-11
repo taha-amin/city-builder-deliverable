@@ -91,7 +91,7 @@ footer {
 }
 
 .city-images img {
-    height: 200px;
+    height: 150px;
     width: 250px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;

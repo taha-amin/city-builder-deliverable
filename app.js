@@ -23,46 +23,62 @@ const slogans = [];
 
 //set event listeners
 addSloganButton.addEventListener('click', () => {
+    const newSlogan = sloganInputEl.value;
+
+    slogans.push(newSlogan);
+
+    displaySlogans();
+
+    sloganInputEl.value = '';
 
 });
 
 cityNameInput.addEventListener('input', () => {
-
+    cityNameEl.textContent = cityNameInput.value;
 });
 
 castleDropDown.addEventListener('change', () => {
+  //increment castle count
+    castleCount++;
 
+    castleImageEl.src = `assets/castle-${castleDropDown.value}.png`;
+    displayCountStats();
 });
 
 skylineDropDown.addEventListener('change', () => {
+  //Increment skyline count
+    skylineCount++;
 
+    skylineImageEl.src = `assets/skyline-${skylineDropDown.value}.png`;
+    displayCountStats();
 });
 
 waterfrontDropDown.addEventListener('change', () => {
+  //increment waterfront count
+    waterfrontCount++;
 
+    waterfrontImageEl.src = `assets/waterfront-${waterfrontDropDown.value}.png`;
+    displayCountStats();
 });
 
+//Function attaches a string to the DOM describing how many times each dropdown has been changed
 function displayCountStats() {
-  countMessageEl.textContent = `You changed the castle image ${castleCount} times, the skyline image ${skylineCount} times, and the waterfront image ${waterfrontCount} times.`;
+    countMessageEl.textContent = `You changed the castle image ${castleCount} times, the skyline image ${skylineCount} times, and the waterfront image ${waterfrontCount} times.`;
 }
 
+//Function clears DOM, loops through the slogans, then displays slogans on the page
 function displaySlogans() {
-  const listEl = document.getElementById('list');
+    const listEl = document.getElementById('list');
 
-  listEl.textContent = '';
+    listEl.textContent = '';
 
-  for (let slogan of slogans) {
-    const pTag = document.createElement('p');
+    for (let slogan of slogans) {
+        const pTag = document.createElement('p');
 
-    pTag.classList.add('slogan');
-    pTag.textContent = slogan;
+        pTag.classList.add('slogan');
+        pTag.textContent = slogan;
 
     //append this NEW element to an OLD element
-    listEl.append(pTag);
-  }
+        listEl.append(pTag);
+    }
 }
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
